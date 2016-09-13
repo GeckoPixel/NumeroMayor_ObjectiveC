@@ -1,0 +1,27 @@
+#import <Foundation/Foundation.h>
+#include <time.h>
+
+int main (int argc, const char * argv[])
+{
+   srand(time(NULL));
+   NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+   int array[10];
+   int mayor;
+   for(int i = 0; i<10; i++)
+   {
+        array[i] = rand()%100;
+        NSLog (@"%d\n", array[i]);
+   }
+   mayor = array[0];
+   for(int i = 0; i<10; i++)
+   {
+        if(array[i]>mayor)
+        {
+            mayor = array[i];
+        }
+   }
+    NSLog(@"El elemento mayor es: %d",mayor);
+   
+   [pool drain];
+   return 0;
+}
